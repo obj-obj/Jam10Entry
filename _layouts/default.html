@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+
+        <!-- Will link to correct things when this is displayed on https://obj-obj.github.io -->
+        <link href="/assets/css/main.css"/>
+        <link rel="icon" href="/assets/m/logo.gif"/>
+
+        {% if page.title %}
+            <title>{{ page.title }}</title>
+        {% endif %}
+        {% if page.description %}
+            <meta name="description" content="{{ page.description }}"/>
+        {% endif %}
+        
+        <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <div class="main" id="swup">
+                {% if page.title %}
+                    <h1>{{ page.title }}:</h1>
+                {% endif %}
+
+                {{ content }}
+
+                <br/><br/><br/>
+            </div>
+        </div>
+    </body>
+</html>
