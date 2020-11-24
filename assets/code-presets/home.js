@@ -12,7 +12,7 @@ if (condition) {
     console.log("Hello World!");
 }
 
-// Create an array with some diffent fruits
-var array = ["apple", "orange", "pear", "grape", "peach", "bannana"];
+// Create an array with some differnt fruits
+var array = ["apple", "orange", "pear", "grape", "peach", "banana"];
 // Print a random fruit from the array
 console.log(array[Math.floor(Math.random() * array.length)]);

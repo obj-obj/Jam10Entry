@@ -43,11 +43,31 @@ require.config({ paths: { vs: "assets/js/lib/vs" } });
 require(["assets/js/lib/vs/editor/editor.main"], function () {});
 
 // FUNCTIONS //
-function createEditor(containerId, width, height, options) {
+function createEditor(containerId, width, height, data) {
     var container = document.getElementById(containerId);
     container.style.width = width;
     container.style.height = height;
-    return monaco.editor.create(container, options);
+
+    var editorContainer = document.createElement("div");
+    editorContainer.style.height = "100%";
+
+    var runButton = document.createElement("button");
+    runButton.textContent = "Run ▷";
+    runButton.onclick = () => {
+        eval(editor.getValue());
+    };
+
+    container.appendChild(runButton);
+    container.appendChild(editorContainer);
+
+    var editor = monaco.editor.create(editorContainer, {
+        value: data,
+        language: "javascript",
+        readOnly: true,
+
+        theme: "vs-dark",
+    });
+    return editor;
 }
 
 function onPageChange() {
@@ -55,13 +75,7 @@ function onPageChange() {
 
     if (pageName == "A Simple Coding Tutorial") {
         load("assets/code-presets/home.js", (data) => {
-            var editor = createEditor("editor", "90%", "500px", {
-                value: data,
-                language: "javascript",
-                readOnly: true,
-
-                theme: "vs-dark",
-            });
+            var editor = createEditor("editor", "90%", "500px", data);
         });
     }
 }
