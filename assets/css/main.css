@@ -1,0 +1,9 @@
+.editor {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.editor * {
+    border-radius: 3px;
+    transition-duration: 0.1s;
+}

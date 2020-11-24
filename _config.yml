@@ -26,6 +26,8 @@ baseurl: "/Jam10Entry" # the subpath of your site, e.g. /blog
 url: "https://obj-obj.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
+github_url: https://github.com/obj-obj/Jam10Entry
+repl_url: https://repl.it/@objobj/Jam10Entry
 
 # Build settings
 # theme: minima

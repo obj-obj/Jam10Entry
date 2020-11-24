@@ -1,34 +1,92 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width"/>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
 
-        <!-- Will link to correct things when this is displayed on https://obj-obj.github.io -->
-        <link href="/assets/css/main.css"/>
-        <link rel="icon" href="/assets/m/logo.gif"/>
+        <link
+            rel="stylesheet"
+            href="https://obj-obj.github.io/assets/css/main.css"
+        />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="icon" href="https://obj-obj.github.io/assets/m/logo.gif" />
 
         {% if page.title %}
-            <title>{{ page.title }}</title>
+        <title>{{ page.title }}</title>
+        {% endif %} {% if page.description %}
+        <meta name="description" content="{{ page.description }}" />
         {% endif %}
-        {% if page.description %}
-            <meta name="description" content="{{ page.description }}"/>
-        {% endif %}
-        
+
+        <!-- SWUP -->
         <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+
+        <!-- MONACO -->
+        <script src="assets/js/lib/vs/loader.js"></script>
     </head>
 
     <body>
+        <div class="background"></div>
+        <div class="transitiondiv" id="transitiondiv"></div>
+        <a href="/" id="homebutton"
+            ><img
+                src="https://obj-obj.github.io/assets/m/logo.gif"
+                style="width: 50px; height: 50px"
+        /></a>
+
+        <button class="navbutton" onclick="togglenav();">
+            <img
+                class="full"
+                src="https://obj-obj.github.io/assets/m/nav.svg"
+            />
+        </button>
+        <div class="nav" id="nav">
+            <br />
+            <hr />
+            <br />
+            {% for item in site.data.nav %}
+            <a href="{{ item.url }}">{{ item.page }}</a><br />
+            {% for entry in item.items %}
+            <br /><a class="left1" href="{{ entry.url }}">{{ entry.page }}</a
+            ><br />
+            {% endfor %}
+            <br />
+            <hr />
+            <br />
+            {% endfor %}
+        </div>
+
         <div id="wrapper">
-            <div class="main" id="swup">
+            <div class="transition-slide main" id="swup">
+                <br /><br /><br />
+
                 {% if page.title %}
-                    <h1>{{ page.title }}:</h1>
-                {% endif %}
+                <h1 id="{{ page.title }}">{{ page.title }}:</h1>
+                {% endif %} {{ content }}
 
-                {{ content }}
+                <br /><br /><br /><br /><br /><br />
+                <p>My discord is <code>[object Object]#7105</code>.</p>
+                <br />
+                <p>
+                    Cool background from
+                    <a href="https://pickywallpapers.com">Picky Wallpapers</a>.
+                </p>
 
-                <br/><br/><br/>
+                <p>
+                    View the code for this site at:
+                    <a href="{{ site.github_url }}">GitHub</a>
+                    <a href="{{ site.repl_url }}">Repl.it</a>
+                </p>
+                <p>
+                    Thanks to
+                    <a href="https://pages.github.com">GitHub Pages</a>
+                    for hosting this site!
+                </p>
+                <br /><br /><br />
             </div>
         </div>
+
+        <!-- SCRIPTS -->
+        <script src="assets/js/script.js"></script>
+        <script src="https://obj-obj.github.io/assets/js/functions.js"></script>
     </body>
 </html>
