@@ -1,0 +1,7 @@
+---
+---
+
+- page: "Basics:"
+  items:
+    - page: Variables
+      url: {{ site.baseurl }}/Basics/Varables.html

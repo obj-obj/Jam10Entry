@@ -1,9 +1,14 @@
+.background {
+    background-image: url("../background.png");
+    filter: brightness(30%);
+}
+
 .editor {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 .editor * {
-    border-radius: 3px;
+    border-radius: unset;
     transition-duration: 0.1s;
 }

@@ -8,7 +8,7 @@
             rel="stylesheet"
             href="https://obj-obj.github.io/assets/css/main.css"
         />
-        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
         <link rel="icon" href="https://obj-obj.github.io/assets/m/logo.gif" />
 
         {% if page.title %}
@@ -21,13 +21,13 @@
         <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
 
         <!-- MONACO -->
-        <script src="assets/js/lib/vs/loader.js"></script>
+        <script src="{{ site.baseurl }}/assets/js/lib/vs/loader.js"></script>
     </head>
 
     <body>
         <div class="background"></div>
         <div class="transitiondiv" id="transitiondiv"></div>
-        <a href="/" id="homebutton"
+        <a href="{{ site.baseurl }}/" id="homebutton"
             ><img
                 src="https://obj-obj.github.io/assets/m/logo.gif"
                 style="width: 50px; height: 50px"
@@ -43,9 +43,11 @@
             <br />
             <hr />
             <br />
-            {% for item in site.data.nav %}
+            {% for item in site.data.nav %} {% if item.url %}
             <a href="{{ item.url }}">{{ item.page }}</a><br />
-            {% for entry in item.items %}
+            {% else %}
+            <p>{{ item.page }}</p>
+            {% endif %} {% for entry in item.items %}
             <br /><a class="left1" href="{{ entry.url }}">{{ entry.page }}</a
             ><br />
             {% endfor %}
@@ -67,14 +69,17 @@
                 <p>My discord is <code>[object Object]#7105</code>.</p>
                 <br />
                 <p>
-                    Cool background from
-                    <a href="https://pickywallpapers.com">Picky Wallpapers</a>.
-                </p>
-
-                <p>
                     View the code for this site at:
                     <a href="{{ site.github_url }}">GitHub</a>
                     <a href="{{ site.repl_url }}">Repl.it</a>
+                </p>
+                <p>
+                    Libraries used:
+                    <a
+                        href="https://microsoft.github.io/monaco-editor/index.html"
+                        >Monaco Editor</a
+                    >
+                    & <a href="https://swup.js.org/">Swup</a>
                 </p>
                 <p>
                     Thanks to
@@ -86,7 +91,7 @@
         </div>
 
         <!-- SCRIPTS -->
-        <script src="assets/js/script.js"></script>
+        <script src="{{ site.baseurl }}/assets/js/script.js"></script>
         <script src="https://obj-obj.github.io/assets/js/functions.js"></script>
     </body>
 </html>
