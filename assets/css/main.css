@@ -2,8 +2,3 @@
     background-image: url("../background.png");
     filter: brightness(30%);
 }
-
-.editor {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}

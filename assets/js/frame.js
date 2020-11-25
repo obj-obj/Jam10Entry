@@ -18,12 +18,12 @@ function createEditor(containerId, dataSource) {
 
 function createEditorFromData(containerId, data, dataSource) {
     var container = document.getElementById(containerId);
-    container.style.width = "100%";
-    container.style.height = "100%";
 
     var editorContainer = document.createElement("div");
-    editorContainer.classList.add("editor");
+    editorContainer.style.marginTop = "10px";
     editorContainer.style.height = "100%";
+    editorContainer.style.bottom = "0";
+    editorContainer.style.flex = "1";
 
     var runButton = document.createElement("button");
     runButton.textContent = "Run  ▷";
