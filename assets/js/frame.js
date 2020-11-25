@@ -28,7 +28,7 @@ function createEditorFromData(containerId, data, dataSource) {
     var runButton = document.createElement("button");
     runButton.textContent = "Run  ▷";
     runButton.onclick = () => {
-        eval(editor.getValue());
+        window.parent.eval(editor.getValue());
     };
 
     var resetButton = document.createElement("button");
