@@ -1,0 +1,22 @@
+{
+  "files.exclude": {
+    "_data": false,
+    "_posts": false,
+    ".vscode": false,
+    "_site": false,
+    "_layouts": false,
+    ".github": false,
+    ".jekyll-cache": false,
+    "vendor": false,
+    "_config.yml": false,
+    ".gitattributes": false,
+    ".gitignore": false,
+    ".jekyll-metadata": false,
+    "Gemfile": false,
+    "Gemfile.lock": false,
+    "LICENSE": false,
+    "README.md": false,
+    ".jshintrc": false,
+    ".prettierignore": false
+  }
+}

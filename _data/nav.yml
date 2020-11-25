@@ -1,7 +1,16 @@
----
----
-
-- page: "Basics:"
+- page: Basics
+  url: /Jam10Entry/Basics/index.html
   items:
-    - page: Variables
-      url: {{ site.baseurl }}/Basics/Varables.html
+    - page: Variable Types
+      url: /Jam10Entry/Basics/Variable Types.html
+
+    - page: Advanced Numbers
+      url: /Jam10Entry/Basics/Advanced Numbers.html
+    - page: Loops and Expressions
+      url: /Jam10Entry/Basics/Loops and Expressions.html
+    - page: Advanced Strings
+      url: /Jam10Entry/Basics/Advanced Strings.html
+    - page: Advanced Arrays
+      url: /Jam10Entry/Basics/Advanced Arrays.html
+    - page: Advanced Objects
+      url: /Jam10Entry/Basics/Advanced Objects.html

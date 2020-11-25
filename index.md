@@ -7,7 +7,8 @@ My entry for the [Repl.it Code Jam #10](https://repl.it/talk/announcements/Code-
 
 <br/><br/>
 
-This is my simple coding tutorial, which will guide you through the basics of Javascript, have you create small snippets of code, and then put it all together into a program.
+This is my simple coding tutorial, which will guide you through different part of Javascript.\
+Eventually, you will put all these lessons together and make a Snake game.
 
 ###### How to use
 
@@ -18,4 +19,3 @@ This is my simple coding tutorial, which will guide you through the basics of Ja
 2. Click the "Run" button below. You should see some output in the console.
 3. Click the nav button in the top-right to view all the tutorial pages. You can also try editing the code below, if you want.
 <br/><br/>
-  <iframe id="editor" src="{{ site.baseurl }}/Editor.html"></iframe>

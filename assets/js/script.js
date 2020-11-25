@@ -19,12 +19,7 @@ swup.on("transitionStart", () => {
     closenav();
 });
 
-swup.on("animationOutDone", () => {
-    wrapper.style.opacity = "0";
-});
-
 swup.on("animationInStart", () => {
-    wrapper.style.opacity = "1";
     onPageChange();
 });
 
@@ -38,18 +33,17 @@ window.onbeforeunload = () => {
     transitiondiv.style.opacity = "1";
 };
 
-function createEditor(frameName, width, height, dataSource) {
-    var frame = window.frames[frameName];
+function createEditor(width, height, dataSource) {
+    var frame = document.getElementById("editor");
     frame.style.width = width;
     frame.style.height = height;
     frame.frameBorder = "0";
-    frame.contentWindow.postMessage(dataSource);
+    frame.src = "/Jam10Entry/Editor.html";
+    window.dataSource = dataSource;
 }
 
 function onPageChange() {
     var pageName = wrapper.getElementsByTagName("h1")[0].id;
-
-    if (pageName == "A Simple Coding Tutorial") {
-        createEditor("editor", "75%", "500px", "home.js");
-    }
+    console.clear();
+    createEditor("90%", "750px", pageName.toLowerCase() + ".js");
 }

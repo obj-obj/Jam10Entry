@@ -40,17 +40,21 @@
             <br />
             <hr />
             <br />
-            {% for item in site.data.nav %} {% if item.url %}
-            <a href="{{ item.url }}">{{ item.page }}</a><br />
-            {% else %}
-            <p>{{ item.page }}</p>
-            {% endif %} {% for entry in item.items %}
-            <br /><a class="left1" href="{{ entry.url }}">{{ entry.page }}</a
-            ><br />
-            {% endfor %}
-            <br />
-            <hr />
-            <br />
+            {% for item in site.data.nav %}
+                {% if item.url %}
+                    <a href="{{ item.url }}">{{ item.page }}</a><br />
+                {% else %}
+                    <p>{{ item.page }}</p>
+                {% endif %}
+                
+                {% for entry in item.items %}
+                    <br />
+                    <a class="left1" href="{{ entry.url }}">{{ entry.page }}</a
+                    ><br />
+                {% endfor %}
+                <br />
+                <hr />
+                <br />
             {% endfor %}
         </div>
 
@@ -60,7 +64,10 @@
 
                 {% if page.title %}
                 <h1 id="{{ page.title }}">{{ page.title }}:</h1>
-                {% endif %} {{ content }}
+                {% endif %}
+                
+                {{ content }}
+                <iframe id="editor"></iframe>
 
                 <br /><br /><br /><br /><br /><br />
                 <p>My discord is <code>[object Object]#7105</code>.</p>

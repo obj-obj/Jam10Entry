@@ -26,27 +26,35 @@ function createEditorFromData(containerId, data, dataSource) {
     editorContainer.style.flex = "1";
 
     var runButton = document.createElement("button");
-    runButton.textContent = "Run  ▷";
+    runButton.textContent = "Run ▶";
     runButton.onclick = () => {
         window.parent.eval(editor.getValue());
     };
 
     var resetButton = document.createElement("button");
-    resetButton.innerHTML = "Reset 🗘";
+    resetButton.textContent = "Reset 🗘";
     resetButton.onclick = () => {
         localStorage.removeItem(dataSource);
         container.innerHTML = "";
         createEditor(containerId, dataSource);
     };
 
+    var clearButton = document.createElement("button");
+    clearButton.textContent = "Clear Console 🗑";
+    clearButton.onclick = () => {
+        console.clear();
+    };
+
     container.appendChild(runButton);
     container.appendChild(resetButton);
+    container.appendChild(clearButton);
     container.appendChild(editorContainer);
 
     var editor = monaco.editor.create(editorContainer, {
         value: data,
         language: "javascript",
 
+        fontSize: "20px",
         theme: "vs-dark",
     });
     editor.onDidChangeModelContent((e) => {
@@ -55,7 +63,9 @@ function createEditorFromData(containerId, data, dataSource) {
     return editor;
 }
 
-window.onmessage = (message) => {
-    createEditor("container", baseurl + "/assets/code-presets/" + message.data);
-    window.onmessage = undefined;
+window.onload = () => {
+    createEditor(
+        "container",
+        baseurl + "/assets/code-presets/" + window.parent.dataSource
+    );
 };
