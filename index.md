@@ -18,4 +18,4 @@ This is my simple coding tutorial, which will guide you through the basics of Ja
 2. Click the "Run" button below. You should see some output in the console.
 3. Click the nav button in the top-right to view all the tutorial pages. You can also try editing the code below, if you want.
 <br/><br/>
- <div id="editor"></div>
+  <iframe id="editor" src="{{ site.baseurl }}/Editor.html"></iframe>

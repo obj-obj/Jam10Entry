@@ -7,8 +7,3 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
-
-.editor * {
-    border-radius: unset;
-    transition-duration: 0.1s;
-}

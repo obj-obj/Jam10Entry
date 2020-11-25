@@ -1,0 +1,30 @@
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+* {
+    transition-duration: 0.1s;
+}
+
+button {
+    transition-duration: 0.5s;
+    color: white;
+    font-family: "Segoe UI Light";
+    font-size: 20px;
+
+    border-radius: 5px;
+    background-color: rgba(10, 100, 35, 0.5);
+    border: rgb(0, 50, 150) solid 2px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+button:hover {
+    background-color: rgba(15, 150, 52.5, 0.5);
+    border: rgb(0, 75, 225) solid 2px;
+    box-shadow: 0 0 5px 0 rgb(0, 75, 225);
+}

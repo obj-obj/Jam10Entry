@@ -1,0 +1,4 @@
+---
+layout: frame
+name: Editor
+---
