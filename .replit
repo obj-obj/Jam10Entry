@@ -1,2 +1,2 @@
-language = "ruby"
+language = "bash"
 run = "echo '\n\n\n------------------------------------------------------------\n| Site is at https://obj-obj.github.io/Jam10Entry .        |\n| I'm using Jekyll, which I couldn't get to work on repl.it, |\n| so I linked this repl with a github repo instead.        |\n------------------------------------------------------------'"
