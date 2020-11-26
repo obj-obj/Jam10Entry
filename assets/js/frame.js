@@ -5,6 +5,18 @@ require.config({ paths: { vs: baseurl + "/assets/js/lib/vs" } });
 require([baseurl + "/assets/js/lib/vs/editor/editor.main"], function () {});
 
 // FUNCTIONS //
+function clearAll() {
+    for (var i = window.parent.setTimeout(function () {}, 0); i > 0; i--) {
+        window.parent.clearInterval(i);
+        window.parent.clearTimeout(i);
+        if (window.parent.cancelAnimationFrame) {
+            window.parent.cancelAnimationFrame(i);
+        }
+    }
+
+    window.parent.document.onkeypress = undefined;
+}
+
 function createEditor(containerId, dataSource) {
     var editorString = localStorage.getItem(dataSource);
     if (editorString != null) {
@@ -28,12 +40,14 @@ function createEditorFromData(containerId, data, dataSource) {
     var runButton = document.createElement("button");
     runButton.textContent = "Run ▶";
     runButton.onclick = () => {
+        clearAll();
         window.parent.eval(editor.getValue());
     };
 
     var resetButton = document.createElement("button");
     resetButton.textContent = "Reset 🗘";
     resetButton.onclick = () => {
+        clearAll();
         localStorage.removeItem(dataSource);
         container.innerHTML = "";
         createEditor(containerId, dataSource);
@@ -54,6 +68,9 @@ function createEditorFromData(containerId, data, dataSource) {
         value: data,
         language: "javascript",
 
+        cursorBlinking: "smooth",
+        cursorSmoothCaretAnimation: true,
+        smoothScrolling: true,
         fontSize: "20px",
         theme: "vs-dark",
     });

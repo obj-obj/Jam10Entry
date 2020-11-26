@@ -16,6 +16,8 @@ Eventually, you will put all these lessons together and make a Snake game.
     1. `CTRL + SHIFT + K` for Firefox,
     2. `CTRL + SHIFT + J` for Edge/Chrome,
     3. and `F12` for other browsers.
-2. Click the "Run" button below. You should see some output in the console.
+2. Click the "Run" button below. You should see some output in the console, and a snake game should pop up.
 3. Click the nav button in the top-right to view all the tutorial pages. You can also try editing the code below, if you want.
 <br/><br/>
+
+<canvas id="canvas"></canvas>
