@@ -7,7 +7,7 @@ My entry for the [Repl.it Code Jam #10](https://repl.it/talk/announcements/Code-
 
 <br/><br/>
 
-This is my simple coding tutorial, which will guide you through different part of Javascript.\
+This is my simple coding tutorial, which will guide you through different parts of Javascript.\
 Eventually, you will put all these lessons together and make a Snake game.
 
 ###### How to use
