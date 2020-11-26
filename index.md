@@ -20,4 +20,5 @@ Eventually, you will put all these lessons together and make a Snake game.
 3. Click the nav button in the top-right to view all the tutorial pages. You can also try editing the code below, if you want.
 <br/><br/>
 
+Use WASD to control the snake.
 <canvas id="canvas"></canvas>
