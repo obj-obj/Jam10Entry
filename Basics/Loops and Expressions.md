@@ -56,3 +56,7 @@ This loop is more complicated. If you look at the top of the loop, you'll see a 
 and `i++` adds 1 to `i` every time the loop is run.\
 \
 You can use loops to, for example, run the same code to draw the snake on the screen every 0.1 seconds.
+<h6 class="clickable" onclick="toggleheight(this.parentElement.getElementsByClassName('hidden')[0]);">Hint (click):</h6>
+<div class="hidden">
+    <p>Use <code>i--</code> in the for loop, and start <code>i</code> with a value of 15.</p>
+</div>

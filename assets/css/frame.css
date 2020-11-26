@@ -1,3 +1,7 @@
+* {
+    transition-duration: 0.1s;
+}
+
 html,
 body {
     height: 100%;
@@ -8,10 +12,6 @@ body {
 
 #container {
     height: 100%;
-}
-
-* {
-    transition-duration: 0.1s;
 }
 
 button {

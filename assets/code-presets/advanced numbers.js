@@ -1,11 +1,7 @@
-// Set num to 2 + 2 (4)
+// Now you try. Start with this number, that's set to 2 + 2 (4), and try to get to 16 in as many different ways as you can.
+
 var num = 2 + 2;
+// Your code here
 
-// Multiply num by 4 (so it's now 16)
-num *= 4;
-
-// Print square root of num
-console.log(Math.sqrt(num));
-
-// Print random number
-console.log(Math.random());
+// Print number to console
+console.log(num);

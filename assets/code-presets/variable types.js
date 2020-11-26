@@ -1,3 +1,6 @@
+// Try changing the values of these variables and see how the console output changes.
+// Remember to click "Run" each time!
+
 // Number
 var age = 25;
 // Boolean
