@@ -27,4 +27,15 @@ var num = add(1, 3);
 console.log(num);
 ```
 Functions are typically used to do repetitive things that you need to loop/use many, many times throughout your code.\
-An example of a good function would be checking whether the snake's head is touching any part of its body.
+An example of a good function would be checking whether the snake's head is touching any part of its body.\
+\
+The final thing you need to know about functions are event listeners.\
+Like the name, they listen for an event are automatically run when that event happens.\
+Here's an example of one:
+```javascript
+document.onkeypress = (e) => {
+    if (e.key == "Enter") {
+        console.log("Enter was pressed");
+    }
+};
+```

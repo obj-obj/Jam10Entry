@@ -22,4 +22,6 @@ Instead, you type them like this:
 key: value,
 key2: value2,
 ```
+You access keys (attributes) of an object using a period (`.`), like this: `object.key1`.\
+You can manipulate them like any other variable.\
 You can see an example of a full object in the code below:

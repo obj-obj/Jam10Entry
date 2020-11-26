@@ -23,3 +23,4 @@ console.log(olderThan18);
 console.log(name);
 console.log(fruits);
 console.log(house);
+console.log(house.built);

@@ -21,6 +21,11 @@ ctx.setTransform(
     0
 );
 
+var widthTiles = 50;
+var heightTiles = 25;
+var tileSize = 16;
+var tileOffset = 2;
+
 var snake = {
     array: [{ x: 25, y: 12 }],
 
@@ -28,6 +33,56 @@ var snake = {
 };
 
 var apple = {};
+
+// Check if an x & y object collide with a snake tile
+function collides(obj) {
+    var collides = false;
+    snake.array.forEach((seg) => {
+        if (
+            // Make sure the two items are actually different
+            snake.array.indexOf(obj) != snake.array.indexOf(seg) &&
+            // If the location is matching
+            obj.x == seg.x &&
+            obj.y == seg.y
+        ) {
+            collides = true;
+        }
+    });
+
+    // It will be false if the if statement never ran, and true if it ran at least once
+    return collides;
+}
+
+// Randomize apple
+function randomizeApple() {
+    apple.x = randomNumber(0, widthTiles);
+    apple.y = randomNumber(0, heightTiles);
+
+    // Randomize apple again if it collides with the snake
+    if (collides(apple)) {
+        randomizeApple();
+    }
+}
+
+function randomNumber(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
+// EVENT LISTENER //
+document.onkeypress = (e) => {
+    if (e.key == "w" && snake.direction != "down") {
+        snake.direction = "up";
+    } else if (e.key == "s" && snake.direction != "up") {
+        snake.direction = "down";
+    } else if (e.key == "a" && snake.direction != "right") {
+        snake.direction = "left";
+    } else if (e.key == "d" && snake.direction != "left") {
+        snake.direction = "right";
+    }
+};
+
 randomizeApple();
 
 // MAIN GAME LOOP //
@@ -59,17 +114,17 @@ setInterval(() => {
 
     snake.array.forEach((seg) => {
         // Wrapping
-        if (seg.x > 49) {
+        if (seg.x > widthTiles - 1) {
             seg.x = 0;
         }
         if (seg.x < 0) {
-            seg.x = 49;
+            seg.x = widthTiles - 1;
         }
-        if (seg.y > 24) {
+        if (seg.y > heightTiles - 1) {
             seg.y = 0;
         }
         if (seg.y < 0) {
-            seg.y = 24;
+            seg.y = heightTiles - 1;
         }
     });
 
@@ -98,60 +153,21 @@ setInterval(() => {
 
     // Apple
     ctx.fillStyle = "red";
-    ctx.fillRect(apple.x * 20 + 1, apple.y * 20 + 1, 18, 18);
+    ctx.fillRect(
+        apple.x * 20 + tileOffset,
+        apple.y * 20 + tileOffset,
+        tileSize,
+        tileSize
+    );
 
     // Snake segments
     ctx.fillStyle = "lime";
     snake.array.forEach((seg) => {
-        ctx.fillRect(seg.x * 20 + 1, seg.y * 20 + 1, 18, 18);
+        ctx.fillRect(
+            seg.x * 20 + tileOffset,
+            seg.y * 20 + tileOffset,
+            tileSize,
+            tileSize
+        );
     });
 }, 100);
-
-// Check if an x & y object collide with a snake tile
-function collides(obj) {
-    var collides = false;
-    snake.array.forEach((seg) => {
-        if (
-            // Make sure the two items are actually different
-            snake.array.indexOf(obj) != snake.array.indexOf(seg) &&
-            // If the location is matching
-            obj.x == seg.x &&
-            obj.y == seg.y
-        ) {
-            collides = true;
-        }
-    });
-
-    // It will be false if the if statement never ran, and true if it ran at least once
-    return collides;
-}
-
-// Randomize apple
-function randomizeApple() {
-    apple.x = randomNumber(0, 50);
-    apple.y = randomNumber(0, 25);
-
-    // Randomize apple again if it collides with the snake
-    if (collides(apple)) {
-        randomizeApple();
-    }
-}
-
-function randomNumber(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min) + min);
-}
-
-// EVENT LISTENER //
-document.onkeypress = (e) => {
-    if (e.key == "w" && snake.direction != "down") {
-        snake.direction = "up";
-    } else if (e.key == "s" && snake.direction != "up") {
-        snake.direction = "down";
-    } else if (e.key == "a" && snake.direction != "right") {
-        snake.direction = "left";
-    } else if (e.key == "d" && snake.direction != "left") {
-        snake.direction = "right";
-    }
-};
