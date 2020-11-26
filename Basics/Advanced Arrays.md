@@ -33,6 +33,7 @@ That's when you use a for loop.\
 There are a few more things you can do with arrays.\
 To add a new item to an array that already exists, just run `array.push(item);`.\
 To remove an item, run `array.splice(index, 1);` (index is the number of the array item you want to delete).\
+You can also use `array.indexOf(item);` to find the index of a specific item in the array.\
 \
 The last topic in this section is 2D arrays.\
 A 2D array is an array with the list of more arrays inside it.\

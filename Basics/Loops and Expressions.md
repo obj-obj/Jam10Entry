@@ -28,6 +28,12 @@ All of these symbols are placed in-between two values except for `!`.\
 `!` is placed in front of something, and inverts the value.\
 For example, `!false` would be `true`.\
 \
+There are also two symbols that go in-between expressions:\
+`||`: OR\
+`&&`: AND\
+If two expressions have an OR between them, the statement will run if either of the options are true.\
+If two expressions have an AND between them, the statement will only run if both are true.\
+\
 The three types of statements are `if`, `else`, and `else if`.\
 `if` does what you'd expect it to do - it runs code *if* an expression is true.
 `else` will only run if the previous `if` or `else if` statement didn't run.
