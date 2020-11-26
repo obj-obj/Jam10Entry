@@ -71,6 +71,7 @@ function createEditorFromData(containerId, data, dataSource) {
         cursorBlinking: "smooth",
         cursorSmoothCaretAnimation: true,
         smoothScrolling: true,
+        wordWrap: "on",
         fontSize: "20px",
         theme: "vs-dark",
     });
